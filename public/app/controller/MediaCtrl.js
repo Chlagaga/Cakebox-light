@@ -3,7 +3,8 @@ app.controller('MediaCtrl', ['$scope', '$http', '$routeParams',
 
         $http.get('api/player/settings')
             .success(function(data, status, headers, config) {
-                $scope.player = data;
+                $scope.default_player = data.default_type;
+                $scope.avalaible_players = data.avalaible_types;
             })
             .error(function(data, status, headers, config) {
                 console.error("Cakebox: API is unreachable on /api/players/settings");

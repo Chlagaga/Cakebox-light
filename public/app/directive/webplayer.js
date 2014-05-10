@@ -22,10 +22,10 @@ app.directive('webplayer', ["$location", function ($location) {
                 var $_clone = element.clone(),
                     content = '';
 
-                if (scope.playertype == "HTML5") {
+                if (scope.playertype == "html5") {
                     content += '<video id="html5" src="' + scope.url + '" type="' + scope.type + '" controls></video>';
                 }
-                else if (scope.playertype == "DIVX") {
+                else if (scope.playertype == "divx") {
                     content += '<object id="divx" classid="clsid:67DABFBF-D0AB-41fa-9C46-CC0F21721616" codebase="http://go.divx.com/plugin/DivXBrowserPlugin.cab">';
                     content += '<param name="custommode" value="none" />';
                     content += '<param name="autoPlay" value="false" />';
@@ -33,7 +33,7 @@ app.directive('webplayer', ["$location", function ($location) {
                     content += '<embed type="video/divx" src="' + scope.url  + '" width="100%" height="100%" autoPlay="false" custommode="none" pluginspage="http://go.divx.com/plugin/download/" />';
                     content += '</object>';
                 }
-                else if (scope.playertype == "VLC") {
+                else if (scope.playertype == "vlc") {
                     content += '<embed id="vlc" type="application/x-vlc-plugin" version="VideoLAN.VLCPlugin.2" target="' + scope.url + '" autoplay="yes" pluginspage="http://www.videolan.org"></embed>';
                 }
 
